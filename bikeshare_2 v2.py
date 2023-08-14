@@ -1,6 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
+import sys
 
 # Ensure data files are saved within same folder or update to include file paths
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -209,6 +210,8 @@ def display_raw_data(df):
             print("\nYou've seen all the data!")
             break
 
+import sys
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -220,10 +223,16 @@ def main():
         user_stats(df)
         display_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
-            break
-
+        while True:
+            restart = input('\nWould you like to restart? Enter yes or no.\n')
+            if restart.lower() == 'yes':
+                break
+            elif restart.lower() == 'no':
+                print("Exiting the program.")
+                sys.exit()
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
 
 if __name__ == "__main__":
-	main()
+    main()
+
