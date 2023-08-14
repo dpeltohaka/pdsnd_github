@@ -143,17 +143,17 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # Display total travel time
+    # Calculate total and mean travel time
     total_travel_time = df['Trip Duration'].sum()
-    print(f"Total travel time is: {total_travel_time} seconds")
-
-    # Display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
+
+    # Display results
+    print(f"Total travel time is: {total_travel_time:.2f} seconds")
     print(f"Average travel time is: {mean_travel_time:.2f} seconds")
 
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    # Display execution time
+    print("\nThis took {:.2f} seconds.".format(time.time() - start_time))
+    print('-' * 40)
 
 
 def user_stats(df):
@@ -209,8 +209,6 @@ def display_raw_data(df):
         if start_idx >= len(df):
             print("\nYou've seen all the data!")
             break
-
-import sys
 
 def main():
     while True:
