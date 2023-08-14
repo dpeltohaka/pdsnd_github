@@ -16,4 +16,5 @@ This project offers an interactive interface that allows users to delve into bik
 - 'washington.csv': Dataset containing bike share data for the city of Washington, D.C
 
 ### Credits
-This project was created as a part of the Programming for Data Science with Python course
+This project was created as a part of the Programming for Data Science with Python course.  
+Bike share data originally provided by Motivate
